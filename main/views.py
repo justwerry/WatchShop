@@ -9,7 +9,7 @@ def index(request):
 
 
 def watch_list(request, slug):
-    watches = Watch.objects.filter(models__slug=slug)
+    watches = Watch.objects.filter(model__slug=slug)
     return render(request, 'main/watch_list.html', {'watches': watches})
 
 
