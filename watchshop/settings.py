@@ -53,7 +53,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'bookshop.urls'
+ROOT_URLCONF = 'watchshop.urls'
 
 TEMPLATES = [
     {
@@ -74,7 +74,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'bookshop.wsgi.application'
+WSGI_APPLICATION = 'watchshop.wsgi.application'
 
 
 # Database
@@ -129,4 +129,3 @@ from .local_settings import *
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = 'media'
-

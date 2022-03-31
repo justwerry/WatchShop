@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block title %} Watchlist {% endblock %}
+{% load static %}
+{% block content %}
+  {<div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for watch in watches %}
+  <div class="col">
+    <div class="card">
+        {% if watch.image %}
+      <img style="width: 250px; height: 350px;" src="{{ watch.image.url }}" class="card-img-top" alt="...">
+        {% else %}
+        <img style="width: 250px; height: 350px;" src="{% static 'img/def_image.png' %}" class="card-img-top" alt="...">
+         {% endif%}
+      <div class="card-body">
+        <h5 class="card-title">{{watch.title}}</h5>
+        <p class="card-text">{{watch.status}}</p>
+          <a class="btn btn-success" href="{% url 'create_order' watch.id %}" role="button">Купить</a>
+      </div>
+    </div>
+  </div>
+      {% endfor %}
+
+</div>
+{% endblock %}
+

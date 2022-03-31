@@ -1,19 +1,24 @@
 from django.db import models
 
-# Create your models here.
-class Author(models.Model):
+
+class Brand(models.Model):
     name = models.CharField(max_length=55)
-    last_name = models.CharField(max_length=85, blank=True)
-    date_of_birth = models.DateField()
-    image = models.ImageField(blank=True, null=True, upload_to='authors')
+    date_of_found = models.DateField()
+    image = models.ImageField(blank=True, null=True, upload_to='brands')
+
     def __str__(self):
-        return f'{self.name} {self.last_name}'
-class Genre(models.Model):
+        return f'{self.name}'
+
+
+class Model(models.Model):
     slug = models.SlugField(max_length=55, primary_key=True)
     name = models.CharField(max_length=55, unique=True)
+
     def __str__(self):
         return self.name
-class Book(models.Model):
+
+
+class Watch(models.Model):
 
     CHOICES = (
         ('in stock', 'В наличии'),
@@ -21,14 +26,14 @@ class Book(models.Model):
 
     )
     title = models.CharField(max_length=100)
-    image = models.ImageField(blank=True, null=True, upload_to='books')
+    image = models.ImageField(blank=True, null=True, upload_to='watches')
     status = models.CharField(choices=CHOICES, max_length=20)
-    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='books')
-
-    genre = models.ManyToManyField(Genre)
+    brand = models.ForeignKey(Brand, on_delete=models.CASCADE, related_name='watches')
+    model = models.ManyToManyField(Model)
 
     def __str__(self):
         return self.title
+
     @property
     def get_absolute_url(self):
         from django.urls import reverse

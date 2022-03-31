@@ -275,4 +275,4 @@ fabric.properties
 .idea/codestream.xml
 
 # End of https://www.toptal.com/developers/gitignore/api/pycharm,django
-bookshop/local_settings.py
+watchshop/local_settings.py

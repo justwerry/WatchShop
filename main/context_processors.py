@@ -1,5 +1,5 @@
-from .models import Author
+from .models import Brand
 
 def navbar(request):
-    authors = Author.objects.all()
-    return {'authors': authors}
+    brands = Brand.objects.all()
+    return {'brands': brands}

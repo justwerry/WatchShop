@@ -1,11 +1,11 @@
 from django.db import models
 
 # Create your models here.
-from main.models import Book
+from main.models import Watch
 
 
 class Order(models.Model):
-    book = models.ForeignKey(Book, on_delete=models.CASCADE, related_name='orders')
+    watch = models.ForeignKey(Watch, on_delete=models.CASCADE, related_name='orders')
     phone = models.CharField(max_length=13)
     address = models.TextField()
     city = models.CharField(max_length=100)
