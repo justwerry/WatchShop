@@ -12,8 +12,8 @@
         <img style="width: 250px; height: 350px;" src="{% static 'img/def_image.png' %}" class="card-img-top" alt="...">
          {% endif %}
       <div class="card-body">
-        <h5 class="card-title">{{watch.title}}</h5>
-        <p class="card-text">{{watch.status}}</p>
+        <h5 class="card-title">{{ watch.title }}</h5>
+        <p class="card-text">{{ watch.status }}</p>
           <a class="btn btn-success" href="{% url 'create_order' watch.id %}" role="button">Купить</a>
       </div>
     </div>
