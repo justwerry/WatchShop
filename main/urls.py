@@ -6,4 +6,5 @@ urlpatterns = [
     path('', index, name='home'),
     path('<str:slug>/', watch_list, name='watch-list'),
     path('brand/<int:pk>/', brand_detail, name='brand-detail'),
+
 ]

@@ -10,8 +10,8 @@
   {% endif %}
   <div class="card-img-overlay">
     <h5 class="card-title">{{ brand }}</h5>
-    <p class="card-text">{{ brand.date_of_found }} </p>
-    <h4> Произведения </h4>
+    <p class="card-text"> Дата Основания: {{ brand.date_of_found }} </p>
+    <h4> Часы </h4>
         {% for watch in watches %}
     <p class="card-text">{{ watch }}</p>
     {% endfor %}
